@@ -1,0 +1,8 @@
+%article
+  %time= "Published #{l(post.published_at.to_date, format: :long)}"
+  .content.summary
+    %h3= link_to(post.title, post)
+    = preserve do
+      = markdown_to_html(post.body)
+  %section.info
+    = render 'exposition/posts/tags', tags: post.tags
