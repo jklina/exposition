@@ -7,5 +7,8 @@ module Exposition
       g.assets false
       g.helper false
     end
+    initializer "exposition.assets.precompile" do |app|
+        app.config.assets.precompile += %w( exposition/twitter.svg )
+    end
   end
 end

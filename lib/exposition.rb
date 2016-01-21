@@ -5,6 +5,7 @@ require "haml"
 require "bourbon"
 require "neat"
 require "exposition/engine"
+require "exposition/concerns/models/post"
 
 module Exposition
 end
