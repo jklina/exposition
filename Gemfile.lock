@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    exposition (0.0.2)
+    exposition (0.0.2.pre.alpha)
       bcrypt (~> 3.1)
       bitters
       bourbon (~> 4.2)

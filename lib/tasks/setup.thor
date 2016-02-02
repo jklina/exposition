@@ -8,7 +8,7 @@ class Setup < Thor
     required: true,
     desc: 'specifies attributes for your user account. eg. name:Johnny email:john@exposition.com password:secret password_confirmation:secret'
   def create_user
-    user_attributes = options.fetch(:attributes)
-    Exposition::User.create!(user_attributes)
+    user_attributes = options.fetch('attributes')
+    ::Exposition::User.create!(user_attributes)
   end
 end
