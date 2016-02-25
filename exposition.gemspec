@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Exposition::VERSION
   s.authors     = ["Josh Klina"]
   s.email       = ["joshua.klina@gmail.com"]
-  s.homepage    = "http://joshklina.com"
+  s.homepage    = "https://github.com/jklina/Exposition"
   s.summary     = "A very boring and simple blog engine for Rails."
   s.description = "A very simple and boring blogging engine for Rails."
   s.license     = "MIT"
