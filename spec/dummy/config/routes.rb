@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  mount Exposition::Engine => "/blog"
+  mount Exposition::Engine, at: "/"
 end

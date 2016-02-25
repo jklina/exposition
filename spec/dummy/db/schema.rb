@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160112204019) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+ActiveRecord::Schema.define(version: 20160115202438) do
 
   create_table "categorical_taggings", force: :cascade do |t|
     t.integer "taggable_id"
@@ -22,7 +19,7 @@ ActiveRecord::Schema.define(version: 20160112204019) do
     t.integer "tag_id"
   end
 
-  add_index "categorical_taggings", ["taggable_type", "taggable_id"], name: "index_categorical_taggings_on_taggable_type_and_taggable_id", using: :btree
+  add_index "categorical_taggings", ["taggable_type", "taggable_id"], name: "index_categorical_taggings_on_taggable_type_and_taggable_id"
 
   create_table "categorical_tags", force: :cascade do |t|
     t.string   "label"
@@ -31,8 +28,8 @@ ActiveRecord::Schema.define(version: 20160112204019) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "categorical_tags", ["label"], name: "index_categorical_tags_on_label", unique: true, using: :btree
-  add_index "categorical_tags", ["slug"], name: "index_categorical_tags_on_slug", unique: true, using: :btree
+  add_index "categorical_tags", ["label"], name: "index_categorical_tags_on_label", unique: true
+  add_index "categorical_tags", ["slug"], name: "index_categorical_tags_on_slug", unique: true
 
   create_table "exposition_posts", force: :cascade do |t|
     t.string   "title"
@@ -45,7 +42,7 @@ ActiveRecord::Schema.define(version: 20160112204019) do
     t.string   "slug"
   end
 
-  add_index "exposition_posts", ["slug"], name: "index_exposition_posts_on_slug", unique: true, using: :btree
+  add_index "exposition_posts", ["slug"], name: "index_exposition_posts_on_slug", unique: true
 
   create_table "exposition_users", force: :cascade do |t|
     t.string   "name"
@@ -56,6 +53,6 @@ ActiveRecord::Schema.define(version: 20160112204019) do
     t.datetime "updated_at",      null: false
   end
 
-  add_index "exposition_users", ["email"], name: "index_exposition_users_on_email", unique: true, using: :btree
+  add_index "exposition_users", ["email"], name: "index_exposition_users_on_email", unique: true
 
 end
