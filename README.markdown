@@ -38,7 +38,7 @@ Configuration is the same as a typical installation of a Rails Engine
 * Mount the engine by adding `mount Exposition::Engine, at: "/blog"` to the routes file. You can also mount the engine to your project's root by adding `mount Exposition::Engine, at: "/"` instead.
 * Install the migrations by running rake exposition:install:migrations
 * Run the migrations `rake db:migrate`
-* Add an admin user by using the Rails Console or running `thor create_user` from the command line
+* Add an admin user by using the Rails console `Exposition::User.create!(name: 'Johnny Appleseed', email: 'johnny@appleseed.com', password: 'secret', password_confirmation: 'secret')`
 * Set the values in the en.yml file to your liking
 
 Customization
@@ -87,9 +87,3 @@ Running the Test Suite
 
 This project rocks and uses MIT-LICENSE.
 
-
-* Create new Rails App
-* Include exposition gem
-* Mount the engine by adding `mount Exposition::Engine, at: "/blog"` to the routes file
-* Install the migrations by running rake exposition:install:migrations
-* Run the migrations `rake db:migrate`
