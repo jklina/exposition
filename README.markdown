@@ -33,7 +33,7 @@ Setup
 
 Configuration is the same as a typical installation of a Rails Engine
 
-* Create new Rails App
+* Create new Rails app
 * Include exposition gem by adding `gem 'exposition'` to your Gemfile
 * Mount the engine by adding `mount Exposition::Engine, at: "/blog"` to the routes file. You can also mount the engine to your project's root by adding `mount Exposition::Engine, at: "/"` instead.
 * Install the migrations by running rake exposition:install:migrations
@@ -47,17 +47,19 @@ Customization
 I have a very basic and boring starter theme in place. Feel free to make it your own, or use it. The project uses [thoughtbot's SASS libraries](http://bourbon.io/ "Bourbon").
 
 * Frontend styles and markup are where you would expect them to be. So:
-  * app/assets/stylesheets
-  * app/views/layouts/application.html.haml
-  * app/views
+  * app/assets/stylesheets/exposition
+  * app/views/layouts/exposition/application.html.haml
+  * app/views/exposition
 
 * Admin styles and markup are in the Admin namespace. So:
-  * app/assets/stylesheets/admin
-  * app/views/layouts/admin.html.haml
-  * app/views/admin
+  * app/assets/stylesheets/exposition/admin
+  * app/views/layouts/exposition/admin.html.haml
+  * app/views/admin/exposition
+
+If you duplicate these files and directories in your project you can override the views and customize them however you like.
 
 ### Static Pages
-You can add static pages by using the high_voltage. Instructions can be found at the gem's [website](http://thoughtbot.github.io/high_voltage/ "High Voltage")
+You can add static pages by using High Voltage. Instructions can be found at the gem's [website](http://thoughtbot.github.io/high_voltage/ "High Voltage")
 
 Deployment instructions
 -----------------------
