@@ -39,6 +39,7 @@ Configuration is the same as a typical installation of a Rails Engine
 * Install the migrations by running rake exposition:install:migrations
 * Run the migrations `rake db:migrate`
 * Add an admin user by using the Rails Console or running `thor create_user` from the command line
+* Set the values in the en.yml file to your liking
 
 Customization
 -------------
