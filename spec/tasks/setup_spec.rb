@@ -1,11 +1,10 @@
-require 'thor'
 require 'rails_helper'
-load "tasks/setup.thor"
+require "exposition/setup"
 
-RSpec.describe Setup do
+RSpec.describe Exposition::Setup do
   describe '#create_user' do
     it 'generates a new user when the proper options are provided' do
-      options = {attributes: { name: 'johnny',
+      options = {'attributes' => { name: 'johnny',
                               email: 'johnny@appleseed.com',
                               password: 'secret',
                               password_confirmation: 'secret' }
@@ -20,7 +19,7 @@ RSpec.describe Setup do
   end
 
   it 'generates a useful error message when incorrectly used' do
-      invalid_options = {attributes: { name: 'johnny',
+      invalid_options = {'attributes' => { name: 'johnny',
                               password: 'secret',
                               password_confirmation: 'secret' }
       }
