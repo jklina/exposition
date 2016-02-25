@@ -9,7 +9,7 @@ module Exposition
         included do
           belongs_to :author, class_name: 'User'
 
-          validates_presence_of :title, :body, :author
+          validates_presence_of :title, :body, :author, :summary
           validates_length_of :title, maximum: 244
 
           before_save :set_published_at_date

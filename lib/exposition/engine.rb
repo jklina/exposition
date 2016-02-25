@@ -10,8 +10,5 @@ module Exposition
     initializer "exposition.assets.precompile" do |app|
         app.config.assets.precompile += %w( exposition/twitter.svg )
     end
-    rake_tasks do
-      load "lib/tasks/setup.thor"
-    end
   end
 end
