@@ -31,10 +31,12 @@ Gem::Specification.new do |s|
   s.add_dependency 'categorical'
   s.add_dependency 'human_urls'
   s.add_dependency 'uglifier'
+  s.add_dependency 'jquery-rails', '~> 4.1'
 
   s.add_development_dependency "pry-rails"
   s.add_development_dependency 'rspec-rails', '~> 3.0'
   s.add_development_dependency 'capybara'
+  s.add_development_dependency 'selenium-webdriver'
   s.add_development_dependency 'factory_girl_rails', '~> 4.0'
   s.add_development_dependency "shoulda-matchers", '~> 2.8'
   s.add_development_dependency "database_cleaner", '~> 1.4'

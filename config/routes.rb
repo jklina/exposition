@@ -1,6 +1,4 @@
 Exposition::Engine.routes.draw do
-  # get 'tags/show'
-
   namespace :admin do
     resources :posts
     resources :tags

@@ -26,14 +26,15 @@ RSpec.feature "Session management", :type => :feature do
     expect(page).to have_content(I18n.t("sessions.destroy"))
   end
 
-  scenario "user can log out" do
+  scenario "user can log out", js: true do
     user = create(:user, email: 'user@user.com',
                   password: 'password',
                   name: 'Josh')
 
     login_as(user)
     click_on(I18n.t("sessions.destroy"))
+    visit exposition.admin_login_path
 
-    expect(current_path).to match(exposition_path)
+    expect(page).to_not have_content(I18n.t("sessions.destroy"))
   end
 end
