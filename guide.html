@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>Exposition Guide</title>
+
+    <link href='//fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+
+    <link href="/stylesheets/site.css" rel="stylesheet" />
+    <script src="/javascripts/all.js"></script>
+  </head>
+
+  <header>
+    <div class="logo"></div>
+    <h1><a href="/">Exposition</a></h1>
+    <nav>
+      <ul>
+        <li><a href="/">About</a></li>
+        <li><a href="/guide.html">Guide</a></li>
+        <li><a target="_blank" href="https://github.com/jklina/Exposition">Source Code</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <body class="guide">
+    <main>
+<h2>Guide</h2>
+<p>Configuration is the same as a typical installation of a Rails Engine.</p>
+<h3>Setup</h3>
+<ul>
+  <li>Create new Rails app</li>
+  <li>Include the Exposition gem by adding <code>gem 'exposition'</code> to your Gemfile</li>
+  <li>Mount the engine by adding <code>mount Exposition::Engine, at: "/blog"</code> to the routes file. You can also mount the engine to your project's root by adding <code>mount Exposition::Engine, at: "/"</code> instead.</li>
+  <li>Install the migrations by running <code>rake exposition:install:migrations</code></li>
+  <li>Run the migrations <code>rake db:migrate</code></li>
+    <li>Add an admin user by using the Rails console <code>Exposition::User.create!(name: 'Johnny Appleseed', email: 'johnny@appleseed.com', password: 'secret', password_confirmation: 'secret')</code></li>
+  <li>Set the values in the en.yml file to your liking</li>
+</ul>
+<h3>Customization</h3>
+<p>I have a very basic and boring starter theme in place. Feel free to make it your own, or use it. The project uses <a href="http://bourbon.io/">thoughtbot's SASS libraries</a>.</p>
+
+
+<p>Frontend styles and markup are where you would expect them to be. So:</p>
+<ul>
+  <li>app/assets/stylesheets/exposition</li>
+  <li>app/views/layouts/exposition/application.html.haml</li>
+  <li>app/views/exposition</li>
+</ul>
+
+
+<p>Admin styles and markup are in the Admin namespace. So:</p>
+<ul>
+  <li>app/assets/stylesheets/exposition/admin</li>
+  <li>app/views/layouts/exposition/admin.html.haml</li>
+  <li>app/views/exposition/admin</li>
+</ul>
+
+<p>You can override these by creating the same files and directory in your app. From there you can customize them however you like</p>
+
+<h4>Static Pages</h4>
+
+<p>You can add static pages by using High Voltage. Instructions can be found at the gem's <a href="http://thoughtbot.github.io/high_voltage">website</a></p>
+
+<h3>Deployment</h3>
+
+<p>You can deploy the app however you like, but I like <a href="http://heroku.com">Heroku</a>. Especially their <a href="https://www.heroku.com/pricing">hobby plan</a>. To deploy on Heroku:
+
+<ul>
+  <li><code>git push heroku master</code></li>
+  <li><code>heroku run rake db:setup</code></li>
+  <li>Create your admin user in the console.</li>
+  <ul>
+    <li><code>heroku run rails console</code></li>
+    <li><code>Exposition::User.create!(name: 'Your Name', email: 'your@email.com', password: 'secrect', password_confirmation: 'secret')</code></li>
+  </ul>
+  <li><code>heroku open</code></li>
+</ul>
+</main>
+
+  </body>
+
+  <footer>
+    <div class="info">
+      By: <a target="_blank" href="http://www.joshklina.com">Josh Klina</a>
+    </div>
+  </footer>
+</html>
