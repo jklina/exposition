@@ -40,7 +40,8 @@ RSpec.feature "Post management", :type => :feature do
     expect(page).to have_text(post.body)
 
     fill_in "Title", with: "Hello World!"
-    fill_in "Body", with: "1, 2, 3, 4 get your booty on the floor."
+    fill_in "Body", with: "My great idea!"
+    fill_in "Summary", with: "My great summary!"
     fill_in "Slug", with: "my slug"
     check "coffee"
     select "Josh", from: "post[author_id]"
@@ -48,7 +49,7 @@ RSpec.feature "Post management", :type => :feature do
     click_on "Update Post"
 
     expect(page).to have_text("Hello World!")
-    expect(page).to have_text("1, 2, 3, 4 get your booty on the floor.")
+    expect(page).to have_text("My great summary!")
     expect(page).to have_text("my-slug")
     expect(page).to have_text("Josh")
     expect(page).to have_text("Josh")
@@ -63,7 +64,8 @@ RSpec.feature "Post management", :type => :feature do
 
     visit exposition.new_admin_post_path
     fill_in "Title", with: "Hello World!"
-    fill_in "Body", with: "1, 2, 3, 4 get your booty on the floor."
+    fill_in "Body", with: "My great idea!"
+    fill_in "Summary", with: "My great summary!"
     fill_in "Slug", with: "my slug"
     select "Josh", from: "post[author_id]"
     check "coffee"
@@ -71,7 +73,7 @@ RSpec.feature "Post management", :type => :feature do
     click_on "Create Post"
 
     expect(page).to have_text("Hello World!")
-    expect(page).to have_text("1, 2, 3, 4 get your booty on the floor.")
+    expect(page).to have_text("My great summary!")
     expect(page).to have_text("my-slug")
     expect(page).to have_css(".published")
     expect(page).to have_text("Josh")

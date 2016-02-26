@@ -25,6 +25,16 @@ article {
     }
   }
 
+  li {
+    a {
+      color: $main-accent-color;
+      border-bottom: 1px dotted $main-accent-color;
+      font-family: $serif-font;
+      // font-style: italic;
+    }
+  }
+
+
   p {
     line-height: modular-scale(1);
 
@@ -65,11 +75,22 @@ article {
   header {
     padding: modular-scale(-1);
   }
+
   code {
-    padding: modular-scale(-1);
-    display: block;
+    padding: modular-scale(-5);
+    display: inline;
     background-color: #212121;
     color: $text-color;
+  }
+
+  pre.highlight {
+    background-color: #212121;
+    code {
+      padding: modular-scale(-1);
+      display: block;
+      background-color: #212121;
+      color: $text-color;
+    }
   }
 }
 

@@ -8,7 +8,21 @@ RSpec.describe Exposition::Post, type: :model do
   it { should validate_presence_of(:author) }
   it { should validate_length_of(:title).is_at_most(244) }
   it { should validate_presence_of(:body) }
-  it { should validate_presence_of(:summary) }
+
+  describe "#summary" do
+    it "offers a the body if no summary is provided" do
+      post = build(:post, body: 'This is my body', summary: nil)
+
+      expect(post.summary).to eq('This is my body')
+    end
+
+    it "give the summary if one is provided" do
+      post = build(:post, body: 'This is my body',
+                   summary: 'This is my summary.')
+
+      expect(post.summary).to eq('This is my summary.')
+    end
+  end
 
   describe "#slug" do
     it "is created automatically from the title if not provided" do

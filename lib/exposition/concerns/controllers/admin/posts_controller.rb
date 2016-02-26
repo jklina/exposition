@@ -61,7 +61,7 @@ module Exposition
           end
 
           def post_params
-            params.require(:post).permit(:id, :title, :body, :slug, :published, :author_id, tag_ids: [])
+            params.require(:post).permit(:id, :title, :body, :summary, :slug, :published, :author_id, tag_ids: [])
           end
         end
       end
