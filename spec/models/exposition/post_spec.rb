@@ -65,8 +65,8 @@ RSpec.describe Exposition::Post, type: :model do
       tagged_older_post = create(:post, published: true)
       tagged_newer_post = create(:post, published: true)
 
-      tagged_older_post.published_at = Date.today - 2.days
-      tagged_newer_post.published_at = Date.today
+      tagged_older_post.published_at = Time.now - 2.hours
+      tagged_newer_post.published_at = Time.now
       tagged_older_post.save!
       tagged_newer_post.save!
 
