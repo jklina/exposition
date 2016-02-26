@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Josh Klina"]
   s.email       = ["joshua.klina@gmail.com"]
   s.homepage    = "http://jklina.github.io/exposition"
-  s.summary     = "A very boring and simple blog engine for Rails."
+  s.summary     = "A simple blogging engine in Rails designed to get you up and running quickly."
   s.description = "A very simple and boring blogging engine for Rails."
   s.license     = "MIT"
 
