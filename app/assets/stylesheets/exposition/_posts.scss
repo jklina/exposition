@@ -10,7 +10,7 @@ section.no-posts {
 article {
   @include outer-container;
   @include base-padding;
-  h3 {
+  h2 {
     font-size: modular-scale(2);
     margin: modular-scale(-4) 0;
 

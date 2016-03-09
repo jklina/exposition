@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    exposition (0.0.4.pre.alpha)
+    exposition (0.0.5.1.pre.alpha)
       bcrypt (~> 3.1)
       bitters
       bourbon (~> 4.2)
@@ -58,7 +58,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.4.0)
     arel (6.0.3)
-    bcrypt (3.1.10)
+    bcrypt (3.1.11)
     bitters (1.2.0)
       bourbon (>= 4.2)
       sass (>= 3.4)
@@ -129,7 +129,7 @@ GEM
     mini_portile2 (2.0.0)
     minitest (5.8.3)
     multi_json (1.11.2)
-    neat (1.7.2)
+    neat (1.7.4)
       bourbon (>= 4.0)
       sass (>= 3.3)
     nokogiri (1.6.7.1)

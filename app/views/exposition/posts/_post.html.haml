@@ -1,7 +1,7 @@
 %article
   %time= "Published #{l(post.published_at.to_date, format: :long)}"
   .content.summary
-    %h3= link_to(post.title, post)
+    %h2= link_to(post.title, post)
     = preserve do
       = markdown_to_html(post.summary)
   %section.info
