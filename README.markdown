@@ -19,7 +19,6 @@ Features
 * Basic user authentication
 * Markdown that support code snippets
 * Basic slug management
-* Built in support for static pages using thoughtbot's [High_Voltage](http://thoughtbot.github.io/high_voltage/ "High Voltage")
 
 That's about it for now, though I'm sure features will evolve slowy as needs are recognized through use.
 
@@ -59,7 +58,7 @@ I have a very basic and boring starter theme in place. Feel free to make it your
 If you duplicate these files and directories in your project you can override the views and customize them however you like.
 
 ### Static Pages
-You can add static pages by using High Voltage. Instructions can be found at the gem's [website](http://thoughtbot.github.io/high_voltage/ "High Voltage")
+You can add static pages by using High Voltage. Add the gem to your app and follow the instructions on the gem's [website](http://thoughtbot.github.io/high_voltage/ "High Voltage").
 
 Deployment instructions
 -----------------------

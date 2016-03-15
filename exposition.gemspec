@@ -24,7 +24,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'neat', "~> 1.7.2"
   s.add_dependency 'bitters'
   s.add_dependency 'bcrypt', '~> 3.1'
-  s.add_dependency 'high_voltage', '~> 2.3.0'
   s.add_dependency 'redcarpet', '~> 3.0'
   s.add_dependency 'rouge', '~> 1.8.0'
   s.add_dependency 'kaminari', '~> 0.16'

@@ -7,7 +7,6 @@ PATH
       bourbon (~> 4.2)
       categorical
       haml-rails (~> 0.9)
-      high_voltage (~> 2.3.0)
       human_urls
       jquery-rails (~> 4.1)
       kaminari (~> 0.16)
@@ -101,7 +100,6 @@ GEM
       haml (>= 4.0.6, < 5.0)
       html2haml (>= 1.0.1)
       railties (>= 4.0.1)
-    high_voltage (2.3.0)
     html2haml (2.0.0)
       erubis (~> 2.7.0)
       haml (~> 4.0.0)

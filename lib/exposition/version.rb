@@ -1,3 +1,3 @@
 module Exposition
-  VERSION = "0.0.5.1-alpha"
+  VERSION = "0.0.5.2-alpha"
 end
