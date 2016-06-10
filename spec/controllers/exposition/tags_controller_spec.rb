@@ -7,7 +7,7 @@ RSpec.describe Exposition::TagsController, type: :controller do
     it "finds the given tag" do
       tag = create(:tag)
 
-      get :show, id: tag
+      get :show, params: { id: tag }
 
       expect(assigns(:tag)).to eq(tag)
     end
@@ -23,7 +23,7 @@ RSpec.describe Exposition::TagsController, type: :controller do
       tagged_newer_post.published_at = Date.today
       tagged_older_post.save!
       tagged_newer_post.save!
-      get :show, id: tag
+      get :show, params: { id: tag }
 
       expect(assigns(:taggables)).to eq([tagged_newer_post, tagged_older_post])
     end
@@ -32,7 +32,7 @@ RSpec.describe Exposition::TagsController, type: :controller do
       tag = create(:tag)
       posts = FactoryGirl.create_list(:post, 11, published: true, tags: [tag])
 
-      get :show, id: tag
+      get :show, params: { id: tag }
 
       expect(assigns(:taggables).count).to eq(10)
     end

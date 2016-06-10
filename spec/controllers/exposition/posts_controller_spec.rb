@@ -28,7 +28,7 @@ RSpec.describe Exposition::PostsController, type: :controller do
     it "finds the published post based off the given id" do
       blog_post = create(:post, published: true)
 
-      get :show, id: blog_post
+      get :show, params: { id: blog_post }
 
       expect(assigns(:post)).to eq(blog_post)
     end
@@ -36,7 +36,7 @@ RSpec.describe Exposition::PostsController, type: :controller do
     it "cannot find an unpublished post" do
       blog_post = create(:post, published: false)
 
-      expect { get :show, id: blog_post }.
+      expect { get :show, params: { id: blog_post } }.
         to raise_error(ActiveRecord::RecordNotFound)
     end
   end

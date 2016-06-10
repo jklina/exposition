@@ -31,7 +31,7 @@ RSpec.describe Exposition::Admin::TagsController, type: :controller do
         user = create(:user)
         valid_tag_attributes = attributes_for(:tag, label: 'Label')
 
-        post :create, tag: valid_tag_attributes
+        post :create, params: { tag: valid_tag_attributes }
 
         expect(assigns(:tag)).to be_persisted
         expect(assigns(:tag).label).to eq('Label')
@@ -43,7 +43,7 @@ RSpec.describe Exposition::Admin::TagsController, type: :controller do
     context "with invalid attributes" do
       it "re-renders the new action" do
         invalid_tag_attributes = attributes_for(:tag, label: '')
-        post :create, tag: invalid_tag_attributes
+        post :create, params: { tag: invalid_tag_attributes }
 
         expect(assigns(:tag)).to be_a_new(Categorical::Tag)
         expect(assigns(:tag).label).to eq('')
@@ -56,7 +56,7 @@ RSpec.describe Exposition::Admin::TagsController, type: :controller do
     it "finds the tag" do
       tag = create(:tag)
 
-      get :edit, id: tag
+      get :edit, params: { id: tag }
 
       expect(assigns(:tag)).to eq(tag)
     end
@@ -66,7 +66,7 @@ RSpec.describe Exposition::Admin::TagsController, type: :controller do
     it "finds the tag" do
       tag = create(:tag)
 
-      patch :update, id: tag, tag: {label: 'new label'}
+      patch :update, params: { id: tag, tag: {label: 'new label'} }
 
       expect(assigns(:tag)).to eq(tag)
     end
@@ -75,7 +75,7 @@ RSpec.describe Exposition::Admin::TagsController, type: :controller do
       it "updates the tags attributes when given" do
         tag = create(:tag, label: 'old label')
 
-        patch :update, id: tag, tag: {label: "new label"}
+        patch :update, params: { id: tag, tag: {label: "new label"} }
         tag.reload
 
         expect(tag.label).to eq("new label")
@@ -86,7 +86,7 @@ RSpec.describe Exposition::Admin::TagsController, type: :controller do
       it "renders the edit page" do
         tag = create(:tag, label: 'old label')
 
-        patch :update, id: tag, tag: {label: ""}
+        patch :update, params: { id: tag, tag: {label: ""} }
 
         expect(response).to render_template(:edit)
       end
@@ -97,7 +97,7 @@ RSpec.describe Exposition::Admin::TagsController, type: :controller do
     it "deletes the specified tag" do
       tag = create(:tag)
 
-      delete :destroy, id: tag
+      delete :destroy, params: { id: tag }
 
       expect(response).to redirect_to(admin_tags_path)
       expect(Categorical::Tag.all).to eq([])

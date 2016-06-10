@@ -43,7 +43,7 @@ RSpec.describe Exposition::Admin::PostsController, type: :controller do
                                               body: 'Body',
                                               author_id: user.id)
 
-        post :create, post: valid_post_attributes
+        post :create, params: { post: valid_post_attributes }
 
         expect(assigns(:post)).to be_persisted
         expect(assigns(:post).title).to eq('Title')
@@ -59,7 +59,7 @@ RSpec.describe Exposition::Admin::PostsController, type: :controller do
         invalid_post_attributes = attributes_for(:post,
                                               title: '',
                                               body: 'Body')
-        post :create, post: invalid_post_attributes
+        post :create, params: { post: invalid_post_attributes }
 
         expect(assigns(:post)).to be_a_new(Exposition::Post)
         expect(assigns(:post).title).to eq('')
@@ -72,19 +72,24 @@ RSpec.describe Exposition::Admin::PostsController, type: :controller do
       author = create(:user)
       post_attributes = attributes_for(:post)
 
-      post :create, post: post_attributes
+      post :create, params: { post: post_attributes }
 
       expect(assigns(:authors)).to eq([author])
     end
 
-    it { finds_tags_for { post :create, post: attributes_for(:post) } }
+    it do
+      finds_tags_for do
+        post :create, params: { post: attributes_for(:post) }
+      end
+    end
+
   end
 
   describe "GET #edit" do
     it "finds the post" do
       blog_post = create(:post)
 
-      get :edit, id: blog_post
+      get :edit, params: { id: blog_post }
 
       expect(assigns(:post)).to eq(blog_post)
     end
@@ -93,19 +98,19 @@ RSpec.describe Exposition::Admin::PostsController, type: :controller do
       author = create(:user)
       post = create(:post, author: author)
 
-      get :edit, id: post
+      get :edit, params: { id: post }
 
       expect(assigns(:authors)).to eq([author])
     end
 
-    it { finds_tags_for { get :edit, id: create(:post) } }
+    it { finds_tags_for { get :edit, params: { id: create(:post) } } }
   end
 
   describe "GET #update" do
     it "finds the post" do
       blog_post = create(:post)
 
-      patch :update, id: blog_post, post: {title: 'hello'}
+      patch :update, params: { id: blog_post, post: {title: 'hello'} }
 
       expect(assigns(:post)).to eq(blog_post)
     end
@@ -114,7 +119,7 @@ RSpec.describe Exposition::Admin::PostsController, type: :controller do
       author = create(:user)
       post = create(:post, author: author)
 
-      patch :update, id: post, post: {title: 'hello'}
+      patch :update, params: { id: post, post: {title: 'hello'} }
 
       expect(assigns(:authors)).to eq([author])
     end
@@ -123,9 +128,9 @@ RSpec.describe Exposition::Admin::PostsController, type: :controller do
       user = create(:user)
       blog_post = create(:post)
 
-      patch :update, id: blog_post, post: {title: "hello!",
-                                           body: "1,2,3,4",
-                                           author_id: user.id}
+      patch :update, params: { id: blog_post, post: {title: "hello!",
+                                              body: "1,2,3,4",
+                                              author_id: user.id} }
 
       blog_post.reload
 
@@ -137,7 +142,7 @@ RSpec.describe Exposition::Admin::PostsController, type: :controller do
     it do
       finds_tags_for do
         blog_post = create(:post)
-        patch :update, id: blog_post, post: {title: 'hello'}
+        patch :update, params: { id: blog_post, post: {title: 'hello'} }
       end
     end
   end
