@@ -18,6 +18,6 @@
           %td= truncate(post.summary, length: 40, separator: ' ')
           %td= "#{post.author.name}"
           %td= "#{post.slug}"
-          %td= "#{post.tags.to_sentence}"
+          %td= "#{post.tags.to_a.to_sentence}"
           %td= link_to "Edit", exposition.edit_admin_post_path(post)
   = paginate @posts

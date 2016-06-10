@@ -14,12 +14,14 @@ RSpec.describe Exposition::Admin::SessionsController, type: :controller do
     it "finds the user by the session email" do
       user = create(:user, email: 'user@user.com', password: 'password')
 
-      post :create, session: {email: user.email, password: user.password}
+      post :create, params: {
+        session: {email: user.email, password: user.password}
+      }
       expect(response).to redirect_to(admin_posts_path)
     end
 
     it "generates an error message with incorrect login credentials" do
-      post :create, session: {email: '', password: ''}
+      post :create, params: {session: {email: '', password: ''}}
 
       expect(flash[:error]).to be_present
 
@@ -39,8 +41,8 @@ RSpec.describe Exposition::Admin::SessionsController, type: :controller do
       delete :destroy
 
       expect(session['user_id']).to be_nil
-      expect(cookies['user_id']).to be_nil
-      expect(cookies['remember_token']).to be_nil
+      expect(response.cookies['user_id']).to be_nil
+      expect(response.cookies['remember_token']).to be_nil
     end
   end
 end
