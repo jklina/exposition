@@ -78,6 +78,7 @@ Todo:
 
 * Figure out a clean and easy way to allow image uploads that doesn't complicate setup
 * Add RSS support
+* Add correct head parameters for SEO
 
 Running the Test Suite
 ----------------------
