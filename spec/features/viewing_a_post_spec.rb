@@ -18,4 +18,14 @@ RSpec.feature "Viewing a post", :type => :feature do
     expect { visit exposition.post_path(post) }.
       to raise_error(ActiveRecord::RecordNotFound)
   end
+
+  scenario "a visitor will see the post's title as the page's title" do
+    post = create(:post, published: true, title: 'my title!', summary: 'summary')
+
+    visit exposition.post_path(post)
+
+    expect(page).to have_title('my title!')
+    expect(page).to have_css("meta[name='description'][content='summary']",
+                             visible: false)
+  end
 end
