@@ -1,13 +1,13 @@
 PATH
   remote: .
   specs:
-    exposition (0.0.5.3.pre.alpha)
+    exposition (0.0.5.5.pre.alpha)
       bcrypt (~> 3.1)
       bitters
       bourbon (~> 4.2)
       categorical (~> 0.0.6.rc)
       haml-rails (~> 0.9)
-      human_urls (~> 0.1.4.pre.alpha.0)
+      human_urls (~> 0.1.5.pre.alpha.0)
       jquery-rails (~> 4.1)
       kaminari
       neat (~> 1.7.2)
@@ -108,7 +108,7 @@ GEM
       haml (~> 4.0.0)
       nokogiri (~> 1.6.0)
       ruby_parser (~> 3.5)
-    human_urls (0.1.4.pre.alpha.0)
+    human_urls (0.1.5.pre.alpha.0)
       rails (>= 5.0)
     i18n (0.7.0)
     jquery-rails (4.1.1)
@@ -207,7 +207,7 @@ GEM
     shoulda-matchers (2.8.0)
       activesupport (>= 3.0.0)
     slop (3.6.0)
-    sprockets (3.6.2)
+    sprockets (3.6.3)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
     sprockets-rails (3.1.1)

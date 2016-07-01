@@ -9,6 +9,8 @@ RSpec.describe Exposition::Post, type: :model do
   it { should validate_length_of(:title).is_at_most(244) }
   it { should validate_presence_of(:body) }
 
+  it_behaves_like "a sluggable"
+
   describe "#summary" do
     it "offers a the body if no summary is provided" do
       post = build(:post, body: 'This is my body', summary: nil)

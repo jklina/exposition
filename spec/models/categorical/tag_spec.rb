@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Categorical::Tag, type: :model do
-  # it_behaves_like "a sluggable"
+  it_behaves_like "a sluggable"
 
   describe "#slug" do
     it "is created automatically from the label if not provided" do
