@@ -27,8 +27,8 @@ Gem::Specification.new do |s|
   s.add_dependency 'redcarpet', '~> 3.0'
   s.add_dependency 'rouge', '~> 1.8.0'
   s.add_dependency 'kaminari'
-  s.add_dependency 'categorical'
-  s.add_dependency 'human_urls'
+  s.add_dependency 'categorical', '~> 0.0.6.rc'
+  s.add_dependency 'human_urls', '~> 0.1.4-alpha.0'
   s.add_dependency 'uglifier'
   s.add_dependency 'jquery-rails', '~> 4.1'
 

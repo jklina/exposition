@@ -5,9 +5,9 @@ PATH
       bcrypt (~> 3.1)
       bitters
       bourbon (~> 4.2)
-      categorical
+      categorical (~> 0.0.6.rc)
       haml-rails (~> 0.9)
-      human_urls
+      human_urls (~> 0.1.4.pre.alpha.0)
       jquery-rails (~> 4.1)
       kaminari
       neat (~> 1.7.2)
@@ -75,8 +75,8 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    categorical (0.0.4)
-      rails (>= 4.1)
+    categorical (0.0.6.rc)
+      rails (~> 5.0.0)
     childprocess (0.5.9)
       ffi (~> 1.0, >= 1.0.11)
     coderay (1.1.1)
@@ -108,8 +108,8 @@ GEM
       haml (~> 4.0.0)
       nokogiri (~> 1.6.0)
       ruby_parser (~> 3.5)
-    human_urls (0.1.2)
-      rails (>= 4.1)
+    human_urls (0.1.4.pre.alpha.0)
+      rails (>= 5.0)
     i18n (0.7.0)
     jquery-rails (4.1.1)
       rails-dom-testing (>= 1, < 3)
