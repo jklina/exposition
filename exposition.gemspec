@@ -1,9 +1,7 @@
 $:.push File.expand_path("../lib", __FILE__)
 
-# Maintain your gem's version:
 require "exposition/version"
 
-# Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "exposition"
   s.version     = Exposition::VERSION
@@ -37,7 +35,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'selenium-webdriver', "~> 2"
   s.add_development_dependency 'factory_girl_rails'
   s.add_development_dependency "shoulda-matchers"
-  s.add_development_dependency "database_cleaner", '~> 1.4'
+  s.add_development_dependency "database_cleaner"
   s.add_development_dependency 'faker'
   s.add_development_dependency 'launchy'
 end
