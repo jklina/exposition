@@ -10,14 +10,11 @@
     %meta{name: "generator", content: "Exposition"}
     %meta{name: "subject", content: t('site_subject')}
     %base{href: request.base_url}
-    = stylesheet_link_tag "exposition/application"
     = csrf_meta_tags
   %body
     %header
       %nav
         %h1= link_to t('title'), '/'
-        %ul.social
-          %li= link_to(image_tag('exposition/twitter.svg', class: 'twitter'), '#')
         %ul.menu
           %li= link_to 'Static Page', '#'
     = yield

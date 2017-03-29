@@ -4,7 +4,7 @@ Exposition::Engine.routes.draw do
     resources :tags
     get    'login'   => 'sessions#new'
     post   'login'   => 'sessions#create'
-    delete 'logout'  => 'sessions#destroy'
+    get    'logout'  => 'sessions#destroy'
   end
 
   resources :posts, only: [:show]

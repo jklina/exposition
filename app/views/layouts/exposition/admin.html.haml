@@ -4,7 +4,6 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Exposition
     = stylesheet_link_tag    'exposition/admin/application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'exposition/admin/application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
     %nav.admin
@@ -14,7 +13,7 @@
       - if logged_in?
         %ul.login
           %li= link_to current_user.name, exposition.admin_posts_path
-          %li= link_to t('sessions.destroy'), exposition.admin_logout_path, method: :delete
+          %li= link_to t('sessions.destroy'), exposition.admin_logout_path
     - if flash.any?
       .flashes
         - user_facing_flashes.each do |key, value|

@@ -9,7 +9,9 @@ RSpec.describe Exposition::Post, type: :model do
   it { should validate_length_of(:title).is_at_most(244) }
   it { should validate_presence_of(:body) }
 
-  it_behaves_like "a sluggable"
+  it_behaves_like "a sluggable" do
+    subject { FactoryGirl.build(:post, title: '', slug: 'a-slug') }
+  end
 
   describe "#summary" do
     it "offers a the body if no summary is provided" do

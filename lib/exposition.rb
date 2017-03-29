@@ -4,7 +4,6 @@ require "kaminari"
 require "haml"
 require "bourbon"
 require "neat"
-require 'jquery-rails'
 require "exposition/engine"
 require "exposition/setup"
 require "exposition/concerns/models/post"

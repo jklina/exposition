@@ -1,4 +1,3 @@
-
 require "rails_helper"
 
 RSpec.feature "Session management", :type => :feature do

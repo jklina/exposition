@@ -1,7 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Categorical::Tag, type: :model do
-  it_behaves_like "a sluggable"
+  it_behaves_like "a sluggable" do
+    subject { FactoryGirl.build(:tag, label: '', slug: 'a-slug') }
+  end
 
   describe "#slug" do
     it "is created automatically from the label if not provided" do

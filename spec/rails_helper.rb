@@ -8,11 +8,24 @@ require 'factory_girl_rails'
 require 'database_cleaner'
 require 'shoulda-matchers'
 require 'faker'
+require 'selenium/webdriver'
 ActiveRecord::Migration.maintain_test_schema!
 
 # Adding support files
 # Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 Dir[Exposition::Engine.root.join("spec/support/**/*.rb")].each { |f| require f }
+
+Capybara.register_driver :selenium do |app|
+  Selenium::WebDriver::Firefox::Binary.path = ENV.fetch('FIREFOX_PATH')
+  Capybara::Selenium::Driver.new(app, browser: :firefox)
+end
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
+end
 
 RSpec.configure do |config|
   config.use_transactional_fixtures = true
@@ -41,10 +54,6 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
-  # Delete test files from paperclip
-  config.after(:suite) do
-    FileUtils.rm_rf(Dir["#{Rails.root}/spec/test_files/"])
-  end
   [:controller, :view, :request].each do |type|
     config.include ::Rails::Controller::Testing::TestProcess, :type => type
     config.include ::Rails::Controller::Testing::TemplateAssertions, :type => type
