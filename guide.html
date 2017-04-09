@@ -38,16 +38,12 @@
   <li>Mount the engine by adding <code>mount Exposition::Engine, at: "/blog"</code> to the routes file. You can also mount the engine to your project's root by adding <code>mount Exposition::Engine, at: "/"</code> instead.</li>
   <li>Install the migrations by running <code>rake exposition:install:migrations</code></li>
   <li>Run the migrations <code>rake db:migrate</code></li>
-    <li>Add an admin user by using the Rails console <code>Exposition::User.create!(name: 'Johnny Appleseed', email: 'johnny@appleseed.com', password: 'secret', password_confirmation: 'secret')</code></li>
+    <li>Add an admin user by using the Rails console <code>rails exposition:create_user</code></li>
   <li>Set the values in the en.yml file to your liking</li>
 </ul>
 <h3>Customization</h3>
-<p>I have a very basic and boring starter theme in place. Feel free to make it your own, or use it. The project uses <a href="http://bourbon.io/">thoughtbot's SASS libraries</a>.</p>
-
-
 <p>Frontend styles and markup are where you would expect them to be. So:</p>
 <ul>
-  <li>app/assets/stylesheets/exposition</li>
   <li>app/views/layouts/exposition/application.html.haml</li>
   <li>app/views/exposition</li>
 </ul>
@@ -64,7 +60,7 @@
 
 <h4>Static Pages</h4>
 
-<p>You can add static pages by using High Voltage. Instructions can be found at the gem's <a href="http://thoughtbot.github.io/high_voltage">website</a></p>
+<p>I recommend using <a href="http://thoughtbot.github.io/high_voltage">High Voltage</a>.</p>
 
 <h3>Deployment</h3>
 
@@ -76,7 +72,7 @@
   <li>Create your admin user in the console.</li>
   <ul>
     <li><code>heroku run rails console</code></li>
-    <li><code>Exposition::User.create!(name: 'Your Name', email: 'your@email.com', password: 'secrect', password_confirmation: 'secret')</code></li>
+    <li><code>rails exposition:create_user</code></li>
   </ul>
   <li><code>heroku open</code></li>
 </ul>
