@@ -25,7 +25,7 @@ That's about it for now, though I'm sure features will evolve slowy as needs are
 Requirements
 ------------
 
-This application is currently tested on Rails 4, Ruby 2.2.2 and the PostgreSQL database.
+This application is currently tested on Rails 5, Ruby 2.3 and the PostgreSQL database.
 
 Setup
 -----
@@ -37,16 +37,15 @@ Configuration is the same as a typical installation of a Rails Engine
 * Mount the engine by adding `mount Exposition::Engine, at: "/blog"` to the routes file. You can also mount the engine to your project's root by adding `mount Exposition::Engine, at: "/"` instead.
 * Install the migrations by running rake exposition:install:migrations
 * Run the migrations `rake db:migrate`
-* Add an admin user by using the Rails console `Exposition::User.create!(name: 'Johnny Appleseed', email: 'johnny@appleseed.com', password: 'secret', password_confirmation: 'secret')`
+* Add an admin user by using the Rails console `rails exposition:create_user`
 * Set the values in the en.yml file to your liking
 
 Customization
 -------------
 
-I have a very basic and boring starter theme in place. Feel free to make it your own, or use it. The project uses [thoughtbot's SASS libraries](http://bourbon.io/ "Bourbon").
+There currently is no theme in place, so the views will have to be styled themslves.
 
-* Frontend styles and markup are where you would expect them to be. So:
-  * app/assets/stylesheets/exposition
+* Frontend views are where you would expect them to be. So:
   * app/views/layouts/exposition/application.html.haml
   * app/views/exposition
 
@@ -58,7 +57,8 @@ I have a very basic and boring starter theme in place. Feel free to make it your
 If you duplicate these files and directories in your project you can override the views and customize them however you like.
 
 ### Static Pages
-You can add static pages by using High Voltage. Add the gem to your app and follow the instructions on the gem's [website](http://thoughtbot.github.io/high_voltage/ "High Voltage").
+
+If you would like to add static pages to your site I recommend [High Voltage](https://github.com/thoughtbot/high_voltage "High Voltage"). 
 
 Deployment instructions
 -----------------------
@@ -70,7 +70,7 @@ You can deploy the app however you like, but I like [Heroku](http://heroku.com "
 * `heroku run rake db:setup`
 * Create your admin user in the console.
   * `heroku run rails console`
-  * `User.create(name: 'Your Name', email: 'your@email.com', password: 'secrect', password_confirmation: 'secret')`
+  * `rails exposition:create_user`
 * `heroku open`
 
 Todo:
@@ -85,7 +85,8 @@ Running the Test Suite
 
 `bin/rspec spec`
 
-= Exposition
+License
+-------
 
 This project rocks and uses MIT-LICENSE.
 
