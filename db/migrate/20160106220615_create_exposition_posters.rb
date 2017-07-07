@@ -1,4 +1,4 @@
-class CreateExpositionPosters < ActiveRecord::Migration
+class CreateExpositionPosters < ActiveRecord::Migration[5.1]
   def change
     create_table :exposition_posts do |t|
       t.string :title

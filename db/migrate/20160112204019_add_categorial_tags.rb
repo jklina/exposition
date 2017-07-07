@@ -1,4 +1,4 @@
-class AddCategorialTags < ActiveRecord::Migration
+class AddCategorialTags < ActiveRecord::Migration[5.1]
   def change
     create_table :categorical_tags do |t|
       t.string :label

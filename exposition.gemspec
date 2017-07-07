@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["spec/**/*"]
 
-  s.add_dependency "rails", "5.1.0.rc1"
+  s.add_dependency "rails", "~> 5.1"
   s.add_dependency "pg"
   s.add_dependency "haml", "5.0.0.beta.2"
   s.add_dependency "erubis"
@@ -32,8 +32,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "pry-rails"
   s.add_development_dependency "rspec-rails", "~> 3.5"
   s.add_development_dependency "rails-controller-testing"
-  s.add_development_dependency 'capybara'
-  s.add_development_dependency 'selenium-webdriver', "~> 2"
+  s.add_development_dependency 'capybara-selenium'
   s.add_development_dependency 'factory_girl_rails'
   s.add_development_dependency "shoulda-matchers"
   s.add_development_dependency "database_cleaner"

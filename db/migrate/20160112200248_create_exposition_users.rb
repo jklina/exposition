@@ -1,4 +1,4 @@
-class CreateExpositionUsers < ActiveRecord::Migration
+class CreateExpositionUsers < ActiveRecord::Migration[5.1]
   def change
     create_table :exposition_users do |t|
       t.string :name

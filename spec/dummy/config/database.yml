@@ -6,7 +6,9 @@ default: &default
 development:
   <<: *default
   database: exposition_development
+  port: 5433
 test:
   <<: *default
   database: exposition_test
+  port: 5433
 

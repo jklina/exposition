@@ -1,4 +1,4 @@
-class AddSlugToExpositonPosts < ActiveRecord::Migration
+class AddSlugToExpositonPosts < ActiveRecord::Migration[5.1]
   def change
     add_column :exposition_posts, :slug, :string
 
