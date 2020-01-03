@@ -10,7 +10,7 @@ RSpec.describe Exposition::Post, type: :model do
   it { should validate_presence_of(:body) }
 
   it_behaves_like "a sluggable" do
-    subject { FactoryGirl.build(:post, title: '', slug: 'a-slug') }
+    subject { FactoryBot.build(:post, title: '', slug: 'a-slug') }
   end
 
   describe "#summary" do

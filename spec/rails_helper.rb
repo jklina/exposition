@@ -4,15 +4,15 @@ require 'spec_helper'
 require File.expand_path('../dummy/config/environment', __FILE__)
 require 'rspec/rails'
 require 'rails-controller-testing'
-require 'factory_girl_rails'
+require 'factory_bot_rails'
 require 'database_cleaner'
 require 'shoulda-matchers'
 require 'faker'
 require 'selenium/webdriver'
+require 'webdrivers/chromedriver'
 ActiveRecord::Migration.maintain_test_schema!
 
 # Adding support files
-# Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 Dir[Exposition::Engine.root.join("spec/support/**/*.rb")].each { |f| require f }
 
 Capybara.register_driver :chrome do |app|
@@ -30,6 +30,7 @@ Capybara.register_driver :headless_chrome do |app|
 end
 
 Capybara.javascript_driver = :headless_chrome
+Capybara.server = :webrick
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
@@ -41,7 +42,7 @@ end
 RSpec.configure do |config|
   config.use_transactional_fixtures = true
   config.infer_spec_type_from_file_location!
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
   config.use_transactional_fixtures = false
 
   config.expect_with :rspec do |expectations|

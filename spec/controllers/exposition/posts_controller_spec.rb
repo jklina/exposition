@@ -16,7 +16,7 @@ RSpec.describe Exposition::PostsController, type: :controller do
     end
 
     it "paginates the results in chunks of 10" do
-      posts = FactoryGirl.create_list(:post, 11, published: true)
+      posts = FactoryBot.create_list(:post, 11, published: true)
 
       get :index
 

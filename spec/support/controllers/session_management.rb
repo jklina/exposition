@@ -5,7 +5,6 @@ module Controllers
       fake_login_with(user)
     end
 
-
     def build_user_and_login
       user = build(:user)
       fake_login_with(user)

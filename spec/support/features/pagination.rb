@@ -6,7 +6,7 @@ module Features
       factory_plural = factory_string.pluralize.underscore.to_sym
       number_of_results_for_two_pages = increment + 1
       results = 
-        FactoryGirl.
+        FactoryBot.
         create_list(factory,
                     number_of_results_for_two_pages,
                     attributes)

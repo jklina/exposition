@@ -19,7 +19,7 @@ RSpec.feature "Post management", :type => :feature do
 
   scenario "user can paginate through the posts" do
     create_user_and_login
-    posts = FactoryGirl.create_list(:post, 26)
+    posts = FactoryBot.create_list(:post, 26)
 
     visit exposition.admin_posts_path
     expect(page).to have_selector('.post', count: 25)

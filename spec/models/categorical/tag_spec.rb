@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Categorical::Tag, type: :model do
   it_behaves_like "a sluggable" do
-    subject { FactoryGirl.build(:tag, label: '', slug: 'a-slug') }
+    subject { FactoryBot.build(:tag, label: '', slug: 'a-slug') }
   end
 
   describe "#slug" do

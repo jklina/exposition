@@ -30,7 +30,7 @@ RSpec.describe Exposition::TagsController, type: :controller do
 
     it "paginates the results in chunks of 10" do
       tag = create(:tag)
-      posts = FactoryGirl.create_list(:post, 11, published: true, tags: [tag])
+      posts = FactoryBot.create_list(:post, 11, published: true, tags: [tag])
 
       get :show, params: { id: tag }
 

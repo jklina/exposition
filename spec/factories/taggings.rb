@@ -1,7 +1,6 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :tagging do
-    tag_id 1
-post_id 1
+    tag
+    post
   end
-
 end
