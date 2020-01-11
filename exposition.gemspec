@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'rouge', '~> 2.0'
   s.add_dependency 'kaminari'
   s.add_dependency 'categorical'
+  s.add_dependency 'sass-rails'
   s.add_dependency 'human_urls', '~> 0.1.6-alpha.0'
 
   s.add_development_dependency "pry-rails"
