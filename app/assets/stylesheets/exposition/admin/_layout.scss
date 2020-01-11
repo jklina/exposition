@@ -2,47 +2,27 @@ body {
   font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
 }
 
-nav.admin {
-  background-color: #5B5E63;
-  display: block;
-  overflow: auto;
+section {
   @include base-padding;
   @include outer-container;
-
-  a {
-    color: #ffffff;
-    text-decoration: none;
-
-    &:hover {
-      color: #FF9E61;
-    }
-  }
-
-  ul {
-    float: left;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-
-    li {
-      display: inline-block;
-      margin-right: 1.2em;
-    }
-  }
-
-  ul.login {
-    float: right;
-  }
 }
-
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 0.75em;
 }
 
-label {
-    font-weight: 600;
-    margin-bottom: 0.375em;
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 34px;
+}
+
+a {
+    color: #477dca;
+    text-decoration: none;
 }
 
 input, label, select {
@@ -51,32 +31,9 @@ input, label, select {
     font-size: 1em;
 }
 
-a {
-    color: #477dca;
-    text-decoration: none;
-}
-
-table {
-    border-collapse: collapse;
-    margin: 0.75em 0;
-    table-layout: fixed;
-    width: 100%;
-}
-
-tr, td, th {
-    vertical-align: middle;
-}
-
-th {
-    border-bottom: 1px solid #b7b7b7;
+label {
     font-weight: 600;
-    padding: 0.75em 0;
-    text-align: left;
-}
-
-td {
-    border-bottom: 1px solid #ddd;
-    padding: 0.75em 0;
+    margin-bottom: 0.375em;
 }
 
 input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea, select[multiple="multiple"], textarea {
@@ -111,17 +68,27 @@ input[type="submit"], button {
     white-space: nowrap;
 }
 
-h1 {
-  font-size: 32px;
+table {
+    border-collapse: collapse;
+    margin: 0.75em 0;
+    table-layout: fixed;
+    width: 100%;
 }
 
-h2 {
-  font-size: 34px;
+tr, td, th {
+    vertical-align: middle;
 }
 
-section {
-  @include base-padding;
-  @include outer-container;
+th {
+    border-bottom: 1px solid #b7b7b7;
+    font-weight: 600;
+    padding: 0.75em 0;
+    text-align: left;
+}
+
+td {
+    border-bottom: 1px solid #ddd;
+    padding: 0.75em 0;
 }
 
 .admin-title-header {
@@ -137,3 +104,37 @@ section {
       background-color: #eee;
   }
 }
+
+nav.admin {
+  background-color: #5B5E63;
+  display: block;
+  overflow: auto;
+  @include base-padding;
+  @include outer-container;
+
+  a {
+    color: #ffffff;
+    text-decoration: none;
+
+    &:hover {
+      color: #FF9E61;
+    }
+  }
+
+  ul {
+    float: left;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      margin-right: 1.2em;
+    }
+  }
+
+  ul.login {
+    float: right;
+  }
+}
+
