@@ -1,3 +1,12 @@
 @mixin base-padding {
-  padding: modular-scale(1);
+  padding: 1.0em;
+}
+
+@mixin outer-container {
+  display: block;
+  overflow: auto;
+  padding: 1.5996em;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }

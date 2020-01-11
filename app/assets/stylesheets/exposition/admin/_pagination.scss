@@ -1,11 +1,11 @@
 nav.pagination {
-  margin: modular-scale(1) 0;
+  margin: .4em 0;
 
   span {
-    padding: modular-scale(-4) modular-scale(-3);
-    margin-right: modular-scale(-4);
+    padding: .2em .3em;
+    margin-right: .2em;
     text-align: center;
-    border: $base-border;
+    border: 1px dotted #ccc;
     display: inline-block;
   }
 }
