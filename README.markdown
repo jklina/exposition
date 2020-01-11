@@ -43,7 +43,7 @@ Configuration is the same as a typical installation of a Rails Engine
 Customization
 -------------
 
-There currently is no theme in place, so the views will have to be styled themslves.
+There currently is no theme in place, so the views will have to be styled themselves.
 
 * Frontend views are where you would expect them to be. So:
   * app/views/layouts/exposition/application.html.haml
